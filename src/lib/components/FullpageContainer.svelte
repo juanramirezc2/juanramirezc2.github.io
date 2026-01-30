@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext, onMount, onDestroy, createEventDispatcher } from "svelte";
+  import { writable } from "svelte/store";
 
   const dispatch = createEventDispatcher<{ change: number }>();
 
@@ -7,8 +8,16 @@
   let sections: HTMLElement[] = [];
   let observer: IntersectionObserver;
 
-  setContext("registerSection", (el: HTMLElement) => {
-    sections = [...sections, el];
+  const sectionCount = writable(0);
+
+  setContext("fullpage", {
+    registerSection: (el: HTMLElement) => {
+      const index = sections.length;
+      sections = [...sections, el];
+      sectionCount.set(sections.length);
+      return index;
+    },
+    sectionCount,
   });
 
   function goto(index: number) {

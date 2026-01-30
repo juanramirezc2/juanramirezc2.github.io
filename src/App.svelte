@@ -7,6 +7,7 @@
   import Skills from "./lib/components/Skills.svelte";
   import Contact from "./lib/components/Contact.svelte";
   import ParticlesBackground from "./lib/components/ParticlesBackground.svelte";
+  import DotNavigation from "./lib/components/DotNavigation.svelte";
 
   let activeSection = 0;
 
@@ -17,6 +18,7 @@
 
 <ParticlesBackground />
 <Header {activeSection} />
+<DotNavigation {activeSection} sectionCount={4} />
 
 <FullpageContainer on:change={handleSectionChange}>
   <FullpageSection>
