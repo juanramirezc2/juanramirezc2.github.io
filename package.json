@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@tsparticles/slim": "^3.9.1",
-    "@tsparticles/svelte": "^3.1.1",
-    "svelte-fullpage": "^1.1.1"
+    "@tsparticles/svelte": "^3.1.1"
   }
 }
