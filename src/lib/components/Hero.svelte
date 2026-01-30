@@ -1,14 +1,16 @@
 <section id="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Juan Ramirez</h1>
-      <p class="title">Frontend Engineering Lead</p>
-      <p class="tagline">
-        Building exceptional user experiences with modern web technologies
-      </p>
-      <div class="cta">
-        <a href="#contact" class="btn primary">Get in Touch</a>
-        <a href="#about" class="btn secondary">Learn More</a>
+      <div class="glass-card">
+        <h1>Juan Ramirez</h1>
+        <p class="title">Frontend Engineering Lead</p>
+        <p class="tagline">
+          Building exceptional user experiences with modern web technologies
+        </p>
+        <div class="cta">
+          <a href="#contact" class="btn primary">Get in Touch</a>
+          <a href="#about" class="btn secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -17,13 +19,34 @@
 <style>
   section {
     min-height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     padding-top: 4rem;
+    position: relative;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
   }
 
   .hero-content {
-    max-width: 600px;
+    max-width: 650px;
+  }
+
+  .glass-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
   h1 {
@@ -68,33 +91,74 @@
 
   .btn.primary:hover {
     background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
   }
 
   .btn.secondary {
     border: 2px solid var(--border);
     color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .btn.secondary:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-color-scheme: light) {
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
   }
 
   @media (max-width: 640px) {
+    section {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+
+    .glass-card {
+      padding: 1.75rem;
+      border-radius: 1rem;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
     }
 
     .title {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
     }
 
     .tagline {
       font-size: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .cta {
       flex-direction: column;
+    }
+
+    .btn {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .glass-card {
+      padding: 1.25rem;
+    }
+
+    h1 {
+      font-size: 1.875rem;
+    }
+
+    .title {
+      font-size: 1rem;
     }
   }
 </style>
