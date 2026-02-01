@@ -8,8 +8,8 @@
     },
     {
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/juangramirez',
-      text: 'linkedin.com/in/juangramirez',
+      href: 'https://www.linkedin.com/in/juanramirezc2',
+      text: 'linkedin.com/in/juanramirezc2',
       icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z'
     },
     {
