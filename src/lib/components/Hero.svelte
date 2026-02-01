@@ -1,7 +1,14 @@
+<script>
+  import profileImg from '../../images/profile.JPG';
+</script>
+
 <section id="hero">
   <div class="container">
     <div class="hero-content">
       <div class="glass-card">
+        <div class="profile-image">
+          <img src={profileImg} alt="Juan Ramirez" />
+        </div>
         <h1>Juan Ramirez</h1>
         <p class="title">Frontend Engineering Lead</p>
         <p class="tagline">
@@ -47,6 +54,22 @@
     border-radius: 1.5rem;
     padding: 2.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   h1 {
@@ -126,6 +149,12 @@
       border-radius: 1rem;
     }
 
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+
     h1 {
       font-size: 2.25rem;
     }
@@ -151,6 +180,11 @@
   @media (max-width: 380px) {
     .glass-card {
       padding: 1.25rem;
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
     }
 
     h1 {
