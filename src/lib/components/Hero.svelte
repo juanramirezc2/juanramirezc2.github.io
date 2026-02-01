@@ -6,15 +6,15 @@
   <div class="container">
     <div class="hero-content">
       <div class="glass-card">
-        <div class="profile-image">
+        <div class="profile-image animate">
           <img src={profileImg} alt="Juan Ramirez" />
         </div>
-        <h1>Juan Ramirez</h1>
-        <p class="title">Frontend Engineering Lead</p>
-        <p class="tagline">
+        <h1 class="animate delay-1">Juan Ramirez</h1>
+        <p class="title animate delay-2">Frontend Engineering Lead</p>
+        <p class="tagline animate delay-3">
           Building exceptional user experiences with modern web technologies
         </p>
-        <div class="cta">
+        <div class="cta animate delay-4">
           <a href="#contact" class="btn primary">Get in Touch</a>
           <a href="#about" class="btn secondary">Learn More</a>
         </div>
@@ -24,6 +24,26 @@
 </section>
 
 <style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate {
+    animation: fadeInUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .delay-1 { animation-delay: 100ms; }
+  .delay-2 { animation-delay: 200ms; }
+  .delay-3 { animation-delay: 300ms; }
+  .delay-4 { animation-delay: 400ms; }
+
   section {
     min-height: 100vh;
     height: 100%;
