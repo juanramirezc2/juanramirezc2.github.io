@@ -1,5 +1,5 @@
 <script>
-  import profileImg from '../../images/profile.JPG';
+  import profileImg from '../../images/profile.jpg';
 </script>
 
 <section id="hero">
