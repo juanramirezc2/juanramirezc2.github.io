@@ -1,10 +1,66 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
+  const maxYears = 10;
+
   const skills = [
-    { category: 'Languages', items: ['TypeScript', 'JavaScript', 'HTML', 'CSS'] },
-    { category: 'Frameworks', items: ['React', 'Svelte', 'Next.js', 'Vue'] },
-    { category: 'Tools', items: ['Git', 'Vite', 'Webpack', 'Docker'] },
-    { category: 'Other', items: ['Node.js', 'REST APIs', 'GraphQL', 'CI/CD'] }
+    {
+      category: 'Languages',
+      items: [
+        { name: 'TypeScript', years: 6 },
+        { name: 'JavaScript', years: 10 },
+        { name: 'HTML', years: 10 },
+        { name: 'CSS', years: 10 },
+      ]
+    },
+    {
+      category: 'Frameworks',
+      items: [
+        { name: 'React', years: 7 },
+        { name: 'Svelte', years: 3 },
+        { name: 'Next.js', years: 4 },
+        { name: 'Vue', years: 2 },
+      ]
+    },
+    {
+      category: 'Tools',
+      items: [
+        { name: 'Git', years: 9 },
+        { name: 'Vite', years: 3 },
+        { name: 'Webpack', years: 6 },
+        { name: 'Docker', years: 4 },
+      ]
+    },
+    {
+      category: 'Other',
+      items: [
+        { name: 'Node.js', years: 8 },
+        { name: 'REST APIs', years: 8 },
+        { name: 'GraphQL', years: 4 },
+        { name: 'CI/CD', years: 5 },
+      ]
+    }
   ];
+
+  let visible = false;
+
+  onMount(() => {
+    visible = true;
+  });
+
+  function barWidth(years: number): number {
+    return Math.min((years / maxYears) * 100, 100);
+  }
+
+  function barDelay(catIndex: number, itemIndex: number): string {
+    const base = catIndex * 200 + itemIndex * 100;
+    return `${base}ms`;
+  }
+
+  function labelDelay(catIndex: number, itemIndex: number): string {
+    const base = catIndex * 200 + itemIndex * 100 + 400;
+    return `${base}ms`;
+  }
 </script>
 
 <section id="skills">
@@ -12,14 +68,30 @@
     <div class="glass-card">
       <h2>Skills</h2>
       <div class="skills-grid">
-        {#each skills as skill}
-          <div class="skill-card">
-            <h3>{skill.category}</h3>
-            <ul>
-              {#each skill.items as item}
-                <li>{item}</li>
+        {#each skills as group, catIndex}
+          <div class="skill-group">
+            <h3>{group.category}</h3>
+            <div class="bars">
+              {#each group.items as skill, itemIndex}
+                <div class="bar-row">
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      class:animate={visible}
+                      style="--target-width: {barWidth(skill.years)}%; --bar-delay: {barDelay(catIndex, itemIndex)};"
+                    ></div>
+                    <span
+                      class="bar-label"
+                      class:animate={visible}
+                      style="--label-delay: {labelDelay(catIndex, itemIndex)};"
+                    >
+                      {skill.name}
+                      <span class="bar-years">{skill.years}y</span>
+                    </span>
+                  </div>
+                </div>
               {/each}
-            </ul>
+            </div>
           </div>
         {/each}
       </div>
@@ -61,36 +133,85 @@
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
-  .skill-card {
-    background: transparent;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  .skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   h3 {
     font-size: 1.125rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--accent);
   }
 
-  ul {
-    list-style: none;
+  .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  li {
+  .bar-row {
+    width: 100%;
+  }
+
+  .bar-track {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+    border-radius: 0.375rem;
+    opacity: 0.8;
+    transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--bar-delay);
+  }
+
+  .bar-fill.animate {
+    width: var(--target-width);
+  }
+
+  .bar-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    transition-delay: var(--label-delay);
+    pointer-events: none;
+  }
+
+  .bar-label.animate {
+    opacity: 1;
+  }
+
+  .bar-years {
+    font-weight: 400;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    padding: 0.25rem 0;
   }
 
   @media (prefers-color-scheme: light) {
@@ -100,9 +221,8 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
     }
 
-    .skill-card {
-      background: transparent;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+    .bar-track {
+      background: rgba(0, 0, 0, 0.05);
     }
   }
 
@@ -121,26 +241,20 @@
     }
 
     .skills-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .skill-card {
-      padding: 1rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     h3 {
       font-size: 1rem;
     }
 
-    li {
-      font-size: 0.875rem;
+    .bar-track {
+      height: 1.75rem;
     }
-  }
 
-  @media (max-width: 380px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
+    .bar-label {
+      font-size: 0.8rem;
     }
   }
 </style>
