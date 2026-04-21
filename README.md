@@ -1,4 +1,4 @@
-# juangramirez.me
+# juangramirez.dev
 
 Personal website built with Vite + Svelte + TypeScript.
 

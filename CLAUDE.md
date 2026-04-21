@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a personal portfolio website for Juan Ramirez, designed to showcase developer skills to recruiters and potential contacts. The site is deployed as a GitHub Pages site at juanramirezc2.github.io.
+This is a personal portfolio website for Juan Ramirez, designed to showcase developer skills to recruiters and potential contacts. The site is deployed as a GitHub Pages site at juangramirez.dev.
 
 ## Tech Stack
 
