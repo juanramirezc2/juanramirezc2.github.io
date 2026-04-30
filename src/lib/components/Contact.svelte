@@ -27,7 +27,7 @@
       <h2>Get in Touch</h2>
       <p class="intro">
         I'm always open to discussing new opportunities, interesting projects,
-        or just having a chat about web development.
+        or just having a chat about building things across the stack.
       </p>
       <div class="contact-links">
         {#each contacts as contact}

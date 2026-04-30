@@ -4,6 +4,7 @@
   import Header from "./lib/components/Header.svelte";
   import Hero from "./lib/components/Hero.svelte";
   import About from "./lib/components/About.svelte";
+  import Experience from "./lib/components/Experience.svelte";
   import Skills from "./lib/components/Skills.svelte";
   import Contact from "./lib/components/Contact.svelte";
   import ParticlesBackground from "./lib/components/ParticlesBackground.svelte";
@@ -18,7 +19,7 @@
 
 <ParticlesBackground />
 <Header {activeSection} />
-<DotNavigation {activeSection} sectionCount={4} />
+<DotNavigation {activeSection} sectionCount={5} />
 
 <FullpageContainer on:change={handleSectionChange}>
   <FullpageSection>
@@ -26,6 +27,9 @@
   </FullpageSection>
   <FullpageSection>
     <About />
+  </FullpageSection>
+  <FullpageSection>
+    <Experience />
   </FullpageSection>
   <FullpageSection>
     <Skills />

@@ -3,8 +3,9 @@
 
   const navItems = [
     { label: 'About', index: 1 },
-    { label: 'Skills', index: 2 },
-    { label: 'Contact', index: 3 }
+    { label: 'Experience', index: 2 },
+    { label: 'Skills', index: 3 },
+    { label: 'Contact', index: 4 }
   ];
 
   function scrollToSection(index: number) {

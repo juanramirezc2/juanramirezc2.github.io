@@ -14,12 +14,21 @@
       ]
     },
     {
-      category: 'Frameworks',
+      category: 'Frontend',
       items: [
         { name: 'React', years: 7 },
         { name: 'Svelte', years: 3 },
         { name: 'Next.js', years: 4 },
         { name: 'Vue', years: 2 },
+      ]
+    },
+    {
+      category: 'Backend',
+      items: [
+        { name: 'Node.js', years: 8 },
+        { name: 'REST APIs', years: 8 },
+        { name: 'GraphQL', years: 4 },
+        { name: 'CI/CD', years: 5 },
       ]
     },
     {
@@ -29,15 +38,6 @@
         { name: 'Vite', years: 3 },
         { name: 'Webpack', years: 6 },
         { name: 'Docker', years: 4 },
-      ]
-    },
-    {
-      category: 'Other',
-      items: [
-        { name: 'Node.js', years: 8 },
-        { name: 'REST APIs', years: 8 },
-        { name: 'GraphQL', years: 4 },
-        { name: 'CI/CD', years: 5 },
       ]
     }
   ];

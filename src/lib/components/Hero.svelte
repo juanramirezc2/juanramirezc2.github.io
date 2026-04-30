@@ -10,9 +10,9 @@
           <img src={profileImg} alt="Juan Ramirez" />
         </div>
         <h1 class="animate delay-1">Juan Ramirez</h1>
-        <p class="title animate delay-2">Frontend Engineering Lead</p>
+        <p class="title animate delay-2">Senior Fullstack Developer</p>
         <p class="tagline animate delay-3">
-          Building exceptional user experiences with modern web technologies
+          Building web applications end-to-end, from polished interfaces to resilient backends
         </p>
         <div class="cta animate delay-4">
           <a href="#contact" class="btn primary">Get in Touch</a>
