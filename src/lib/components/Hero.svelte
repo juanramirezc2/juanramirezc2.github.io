@@ -1,5 +1,6 @@
 <script>
   import profileImg from '../../images/profile.jpg';
+  import resumeUrl from '../../assets/Juan_Ramirez_Resume.pdf?url';
 </script>
 
 <section id="hero">
@@ -17,6 +18,7 @@
         <div class="cta animate delay-4">
           <a href="#contact" class="btn primary">Get in Touch</a>
           <a href="#about" class="btn secondary">Learn More</a>
+          <a href={resumeUrl} class="btn secondary" target="_blank" rel="noopener noreferrer">Resume</a>
         </div>
       </div>
     </div>
