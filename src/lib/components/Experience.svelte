@@ -99,7 +99,7 @@
   .timeline::before {
     content: '';
     position: absolute;
-    left: 0.4rem;
+    left: 9px;
     top: 0.45rem;
     bottom: 0.45rem;
     width: 2px;
@@ -133,10 +133,10 @@
 
   .dot {
     position: absolute;
-    left: -1.45rem;
+    left: -23px;
     top: 0.4rem;
-    width: 0.65rem;
-    height: 0.65rem;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--accent);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
@@ -196,10 +196,6 @@
 
     h2 {
       font-size: 1.75rem;
-    }
-
-    .timeline {
-      padding-left: 1.5rem;
     }
 
     .timeline-item {
