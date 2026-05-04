@@ -9,35 +9,35 @@
       items: [
         { name: 'TypeScript', years: 6 },
         { name: 'JavaScript', years: 10 },
-        { name: 'HTML', years: 10 },
-        { name: 'CSS', years: 10 },
+        { name: 'Python', years: 3 },
+        { name: 'SQL', years: 8 },
       ]
     },
     {
       category: 'Frontend',
       items: [
-        { name: 'React', years: 7 },
-        { name: 'Svelte', years: 3 },
+        { name: 'React', years: 8 },
         { name: 'Next.js', years: 4 },
-        { name: 'Vue', years: 2 },
+        { name: 'Redux', years: 6 },
+        { name: 'Svelte', years: 3 },
       ]
     },
     {
       category: 'Backend',
       items: [
         { name: 'Node.js', years: 8 },
-        { name: 'REST APIs', years: 8 },
+        { name: 'REST APIs', years: 10 },
+        { name: 'Ruby on Rails', years: 3 },
         { name: 'GraphQL', years: 4 },
-        { name: 'CI/CD', years: 5 },
       ]
     },
     {
-      category: 'Tools',
+      category: 'AI / LLM',
       items: [
-        { name: 'Git', years: 9 },
-        { name: 'Vite', years: 3 },
-        { name: 'Webpack', years: 6 },
-        { name: 'Docker', years: 4 },
+        { name: 'LLMs & Agents', years: 2 },
+        { name: 'Claude API', years: 2 },
+        { name: 'MCP', years: 1 },
+        { name: 'RAG', years: 2 },
       ]
     }
   ];

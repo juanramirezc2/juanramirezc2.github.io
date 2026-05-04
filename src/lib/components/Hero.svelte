@@ -1,6 +1,6 @@
 <script>
   import profileImg from '../../images/profile.jpg';
-  import resumeUrl from '../../assets/Juan_Ramirez_Resume.pdf?url';
+  import resumeUrl from '../../assets/Juan_Ramirez_Resume_.pdf?url';
 </script>
 
 <section id="hero">
@@ -13,7 +13,7 @@
         <h1 class="animate delay-1">Juan Ramirez</h1>
         <p class="title animate delay-2">Senior Fullstack Developer</p>
         <p class="tagline animate delay-3">
-          Building web applications end-to-end, from polished interfaces to resilient backends
+          Building production web apps end-to-end — now focused on AI agents and agentic engineering
         </p>
         <div class="cta animate delay-4">
           <a href="#contact" class="btn primary">Get in Touch</a>

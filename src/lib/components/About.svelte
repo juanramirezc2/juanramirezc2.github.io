@@ -4,17 +4,20 @@
       <h2>About Me</h2>
       <div class="about-content">
         <p>
-          I'm a senior fullstack developer with over 15 years of experience
-          building scalable, performant web applications end-to-end. I work
-          across the stack — from TypeScript-driven interfaces in React and
-          Svelte to the Node.js services and APIs that power them.
+          I'm a senior fullstack developer with 15+ years of experience
+          building production web applications end-to-end — from polished
+          React/Next.js and TypeScript frontends to Node.js, Rails, and
+          PHP backends. I have a strong UX foundation that helps me
+          translate product and design intent into accessible, performant,
+          intuitive interfaces.
         </p>
         <p>
-          I believe in clean code, thoughtful architecture, and creating products
-          that make a real impact. Outside of shipping production work, I enjoy
-          tinkering with AI and building agentic workflows — exploring how
-          LLM-driven tools can reshape day-to-day engineering. I also spend time
-          mentoring developers and contributing to the web development community.
+          Most recently I've focused on AI and agentic software engineering:
+          designing multi-step agent workflows, integrating LLMs and external
+          APIs into production systems, and applying RAG, prompt engineering,
+          function calling, tool use, and Model Context Protocol (MCP) servers
+          to ship real product features. I deliver simple, reliable solutions
+          to complex problems and lead engineers toward the same.
         </p>
       </div>
     </div>
